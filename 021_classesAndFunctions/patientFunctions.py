@@ -241,7 +241,7 @@ def outputToExcel(df_data, fileName_header, fileName_Common, fileName_suffix,
             with pd.ExcelWriter(path_out) as writer:
                     df_data.to_excel(writer, sheet_name = sheetName, index = True) #if new sheet
 
-def outputFiguresPath(fileName_header, fileName_mid, fileName_suff, parent_dir, folderName):
+def outputFiguresPath(fileName_header, fileName_mid, fileName_suff, parent_dir, folderName, fileExtension = '.tif'):
         fileName_header = str(fileName_header)
         fileName_mid = str(fileName_mid)
         fileName_suff = str(fileName_suff)
@@ -252,7 +252,7 @@ def outputFiguresPath(fileName_header, fileName_mid, fileName_suff, parent_dir, 
         fileName_suff = fileName_suff.replace("/", "-")
 
         fileName = fileName_header + fileName_mid +fileName_suff
-        out_filename = fileName + '.tif'
+        out_filename = fileName + fileExtension
         new_filepath = os.path.join(parent_dir, folderName, out_filename)
         #the output path can be used to save the figure
         return new_filepath
