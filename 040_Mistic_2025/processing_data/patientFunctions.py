@@ -77,7 +77,7 @@ class patient:
         else: self.MDnotes = False
 
         #to create a callable list of treatments recieved for which we have data
-        tx_sheets = ['ChemoTx', 'Hematologic Tx', 'Immuno Tx']
+        tx_sheets = ['ChemoTx', 'Hematologic Tx', 'Immuno Tx', 'Radiation Tx', 'Other Tx']
         treatmentTypesRecieved = []
 
         for possible in tx_sheets:
